@@ -1,0 +1,15 @@
+﻿@using ImagePosts.Data;
+@model ImageView
+<input type="hidden" value="@Model.Image.Id" id="id" />
+<img src="@Model.Image.ImageURL" class="center-block" height="750" width="800" />
+<input id="likes" value=@Model.Image.Likes class="small" />
+@if (Model.Liked)
+{<button disabled class="btn btn-info glyphicon glyphicon-thumbs-up">Like</button> }
+else
+{
+    <button id="btn"data-id="@Model.Image.Id" class="btn btn-info glyphicon glyphicon-thumbs-up">Like</button>
+}
+@section Scripts
+{
+    <script src="~/js/Images.js"></script>
+}
